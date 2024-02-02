@@ -12,7 +12,7 @@ type TextColorNodeType = {
 
 function rgbaToHex(r: number, g: number, b: number, a: number): string {
   const toHex = (value: number) => {
-      const hex = Math.round(value * 255).toString(16);
+      const hex = Math.round(value * 255).toString(16).toUpperCase();
       return hex.length === 1 ? '0' + hex : hex;
   };
 
