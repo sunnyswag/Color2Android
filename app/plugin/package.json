@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "build": "pnpm run build:ui && pnpm run build:main --minify --tree-shaking=true",
+    "build:main": "esbuild plugin-src/code.ts --bundle --target=ES6 --outfile=dist/code.js",
+    "build:ui": "vite build --minify esbuild --emptyOutDir=false",
+    "build:watch": "concurrently -n backend,ui \"pnpm run build:main --watch\" \"pnpm run build:ui --watch\"",
+    "dev": "pnpm build:watch"
   },
   "dependencies": {
     "@figma/plugin-typings": "^1.84.0",

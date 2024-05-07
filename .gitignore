@@ -6,3 +6,16 @@ node_modules
 out/
 dist/
 code.js
+
+# coverage
+.nyc_output
+coverage
+
+# test output
+test/**/out*
+test/**/next-env.d.ts
+.DS_Store
+
+# Editors
+**/.idea
+**/.vscode

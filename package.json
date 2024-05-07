@@ -4,8 +4,11 @@
   "description": "Your Figma Plugin",
   "main": "code.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "watch": "npm run build -- --watch"
+    "build": "turbo run build",
+    "build:watch": "turbo run build:watch",
+    "dev": "turbo run dev --concurrency 20",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "author": "",
   "license": "",
@@ -14,6 +17,7 @@
     "typescript": "*"
   },
   "dependencies": {
-    "pnpm": "^9.0.6"
+    "pnpm": "^9.0.6",
+    "turbo": "^1.13.3"
   }
 }
