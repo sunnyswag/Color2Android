@@ -13,6 +13,7 @@
   "dependencies": {
     "@figma/plugin-typings": "^1.84.0",
     "react": "^18.2.0",
+    "plugin-ui": "workspace:*",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
