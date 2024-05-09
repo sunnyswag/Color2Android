@@ -1,4 +1,4 @@
-import { MainUI } from "../../../packages/plugin-ui/src/PluginUI"
+import { MainUI } from "plugin-ui"
 
 function App() {
 
