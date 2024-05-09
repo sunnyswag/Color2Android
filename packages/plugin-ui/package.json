@@ -13,12 +13,13 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^5.17.0",
-    "react": "^18.3.1"
+    "react": "^18.3.1",
+    "react-syntax-highlighter": "15.5.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.2.18",
-    "@types/react-syntax-highlighter": "15.5.11",
+    "@types/react-syntax-highlighter": "15.5.0",
     "tsconfig": "workspace:*"
   }
 }
