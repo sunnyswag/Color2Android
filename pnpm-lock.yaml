@@ -7,13 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      pnpm:
-        specifier: ^9.0.6
-        version: 9.0.6
-      turbo:
-        specifier: ^1.13.3
-        version: 1.13.3
     devDependencies:
       '@figma/plugin-typings':
         specifier: ^1.78.0
@@ -21,6 +14,9 @@ importers:
       prettier:
         specifier: ^3.2.4
         version: 3.2.5
+      turbo:
+        specifier: ^1.13.3
+        version: 1.13.3
       typescript:
         specifier: '*'
         version: 5.4.5
@@ -200,11 +196,6 @@ packages:
 
   loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
-    hasBin: true
-
-  pnpm@9.0.6:
-    resolution: {integrity: sha512-9thjEwlzIHy3ozbWtDmiQqJqyAaAd99TDWqGBpQZhT3B/+ZAKexZSpxQWjpBDRlkPIcKumd2Mw9c/dzxCpwWFw==}
-    engines: {node: '>=18.12'}
     hasBin: true
 
   prettier@3.2.5:
@@ -733,8 +724,6 @@ snapshots:
   loose-envify@1.4.0:
     dependencies:
       js-tokens: 4.0.0
-
-  pnpm@9.0.6: {}
 
   prettier@3.2.5: {}
 

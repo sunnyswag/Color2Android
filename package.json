@@ -2,7 +2,6 @@
   "name": "Color2Android",
   "version": "1.0.0",
   "description": "Your Figma Plugin",
-  "main": "code.js",
   "scripts": {
     "build": "turbo run build",
     "build:watch": "turbo run build:watch",
@@ -15,10 +14,8 @@
   "devDependencies": {
     "@figma/plugin-typings": "^1.78.0",
     "typescript": "*",
-    "prettier": "^3.2.4"
-  },
-  "dependencies": {
-    "pnpm": "^9.0.6",
+    "prettier": "^3.2.4",
     "turbo": "^1.13.3"
-  }
+  },
+  "packageManager": "pnpm@9.0.6"
 }
