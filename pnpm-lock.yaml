@@ -8,9 +8,6 @@ importers:
 
   .:
     devDependencies:
-      '@figma/plugin-typings':
-        specifier: ^1.78.0
-        version: 1.92.0
       prettier:
         specifier: ^3.2.4
         version: 3.2.5
@@ -23,6 +20,9 @@ importers:
 
   packages/gen-code:
     devDependencies:
+      '@figma/plugin-typings':
+        specifier: ^1.78.0
+        version: 1.92.0
       tsconfig:
         specifier: workspace:*
         version: link:../tsconfig
