@@ -2,7 +2,6 @@
   "name": "plugin",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "build": "pnpm run build:ui && pnpm run build:main --minify --tree-shaking=true",
     "build:main": "esbuild plugin-src/code.ts --bundle --target=ES6 --outfile=dist/code.js",
