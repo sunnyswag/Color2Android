@@ -3,9 +3,9 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { Flex, Radio, Button } from 'antd';
 
 export const MainUI: React.FC = () => (
-  <Flex vertical>
+  <Flex vertical gap="middle" align='center'>
     <ProcessTypeView />
-    <CodePreview code='' />
+    <CodePreview />
     <CopyToClipBoard />
   </Flex>
 );
@@ -22,7 +22,8 @@ const ProcessTypeView: React.FC = () => (
   </Radio.Group>
 );
 
-const CodePreview: React.FC<{ code: string }> = ({ code }) => (
+const CodePreview: React.FC = () => (
+  <div style={{width: 400}}>
   <SyntaxHighlighter
     language="xml"
     customStyle={{
@@ -36,8 +37,10 @@ const CodePreview: React.FC<{ code: string }> = ({ code }) => (
       transitionDuration: "0.2s",
     }}
   >
-    {code}
+    {"code"}
   </SyntaxHighlighter>
+  </div>
+
 );
 
 const CopyToClipBoard: React.FC = () => (
