@@ -1,1 +1,2 @@
-export * from "./backendResultConfig"
+export * from "./backendResult"
+export * from "./uiEvent"

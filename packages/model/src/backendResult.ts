@@ -4,7 +4,6 @@ export type BackendUIState = {
 	
 }
 
-
 export type ColorConfigRes = {
 	xmlCode: string,
 	composeCode: string

@@ -1,9 +1,9 @@
-import { MainUI } from "plugin-ui"
+import { PluginUI } from "plugin-ui"
 
 function App() {
 
   return (
-    <MainUI />
+    <PluginUI />
   )
 }
 
