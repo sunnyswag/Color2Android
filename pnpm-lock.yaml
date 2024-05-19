@@ -156,7 +156,7 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
 
-  packages/repository:
+  packages/view-model:
     dependencies:
       '@figma/plugin-typings':
         specifier: ^1.84.0
