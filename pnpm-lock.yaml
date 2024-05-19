@@ -156,6 +156,18 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
 
+  packages/repository:
+    dependencies:
+      '@figma/plugin-typings':
+        specifier: ^1.84.0
+        version: 1.92.0
+      model:
+        specifier: workspace:*
+        version: link:../model
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
+
   packages/tsconfig: {}
 
 packages:

@@ -1,17 +1,17 @@
-export type UIEvent = {
+export type PluginUIEvent = {
 	msgType: UIEventMsgType,
-	colorCodeType: ColorCodeType,
-  deleteItemId: string
+	colorCodeType: CodeType
+	// extra ui event info
 }
 
 export enum UIEventMsgType {
 	GetColorCode,
 	CopyToClipboard,
-  ToHistoryPage,
-  DeleteItem
+	InitPlugin
+	// another ui event message type
 }
 
-export enum ColorCodeType {
+export enum CodeType {
 	XmlResource,
 	Compose
 }

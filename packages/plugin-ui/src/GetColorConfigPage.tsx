@@ -1,7 +1,7 @@
 import React from 'react';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { Flex, Radio, Button } from 'antd';
-import { ColorCodeType } from 'model';
+import { CodeType } from 'model';
 
 export const GetColorConfigPage: React.FC = () => (
   <Flex vertical gap="middle" align='center'>
@@ -12,9 +12,9 @@ export const GetColorConfigPage: React.FC = () => (
 );
 
 const ColorCodeTypeView: React.FC = () => (
-  <Radio.Group defaultValue={ColorCodeType.XmlResource} buttonStyle="solid">
-    <Radio.Button value={ColorCodeType.XmlResource}>Xml Resource</Radio.Button>
-    <Radio.Button value={ColorCodeType.Compose}>Compose</Radio.Button>
+  <Radio.Group defaultValue={CodeType.XmlResource} buttonStyle="solid">
+    <Radio.Button value={CodeType.XmlResource}>Xml Resource</Radio.Button>
+    <Radio.Button value={CodeType.Compose}>Compose</Radio.Button>
   </Radio.Group>
 );
 
