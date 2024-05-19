@@ -133,6 +133,9 @@ importers:
       antd:
         specifier: ^5.17.0
         version: 5.17.0(date-fns@2.30.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      copy-to-clipboard:
+        specifier: ^3.3.3
+        version: 3.3.3
       model:
         specifier: workspace:*
         version: link:../model
@@ -156,19 +159,22 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
 
+  packages/tsconfig: {}
+
   packages/view-model:
     dependencies:
       '@figma/plugin-typings':
         specifier: ^1.84.0
         version: 1.92.0
+      gen-code:
+        specifier: workspace:*
+        version: link:../gen-code
       model:
         specifier: workspace:*
         version: link:../model
       tsconfig:
         specifier: workspace:*
         version: link:../tsconfig
-
-  packages/tsconfig: {}
 
 packages:
 

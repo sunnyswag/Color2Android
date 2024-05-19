@@ -1,6 +1,9 @@
+import { PluginUIEvent } from "model";
 import { useEffect, useState } from "react";
 
-export const useEffectRegisterOnMessage = (callback: (message: any) => void, oneShot: boolean) => {
+export type SendMsgToModel = (event: PluginUIEvent) => void;
+
+export const useEffectRegisterOnMessage = (callback: (message: any) => void, oneShot: boolean = false) => {
   const [consumed, setConsumed] = useState(false);
 
   useEffect(() => {
