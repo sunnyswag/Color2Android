@@ -120,10 +120,13 @@ importers:
         version: 1.0.0(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11))
 
   packages/gen-code:
-    devDependencies:
+    dependencies:
       '@figma/plugin-typings':
         specifier: ^1.78.0
         version: 1.92.0
+      model:
+        specifier: workspace:*
+        version: link:../model
       tsconfig:
         specifier: workspace:*
         version: link:../tsconfig
