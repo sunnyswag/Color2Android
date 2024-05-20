@@ -1,4 +1,4 @@
-import { PluginUIEvent, UIEventMsgType, curUIStateData, updateCurUIStateData } from "model";
+import { PluginUIEvent, UIEventMsgType, updateCurUIStateData } from "model";
 import { IEventProcessor } from "./iEventProcessor";
 import { genCode } from "gen-code";
 
