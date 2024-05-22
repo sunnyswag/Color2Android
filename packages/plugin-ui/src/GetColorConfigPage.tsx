@@ -9,22 +9,10 @@ import { useEffectRegisterOnMessage } from './Utils';
 
 export const GetColorConfigPage: React.FC = () => {
   const [code, SetCode] = useState<string>("")
-
-  useEffectRegisterOnMessage((message) => {
-    SetCode(message.code)
-  })
-
-  return <Flex vertical gap="middle" align='center'>
-    <ColorCodeTypeView />
-    <CodePreview code={code} />
-    <CopyToClipBoard code={code} />
-  </Flex>
-};
-
-const ColorCodeTypeView: React.FC = () => {
   const [codetype, SetCodeType] = useState<CodeType>(CodeType.XmlResource);
 
   useEffectRegisterOnMessage((message) => {
+    SetCode(message.code)
     SetCodeType(message.codeType)
   })
 
@@ -39,16 +27,36 @@ const ColorCodeTypeView: React.FC = () => {
     })
   }, [codetype])
 
+  return <Flex vertical gap="middle" align='center'>
+    <ColorCodeTypeView codetype={codetype} onCodeTypeChange={onCodeTypeChange} />
+    <CodePreview codetype={codetype} code={code} />
+    <CopyToClipBoard code={code} />
+  </Flex>
+};
+
+const ColorCodeTypeView: React.FC<{
+  codetype: CodeType,
+  onCodeTypeChange: (e: RadioChangeEvent) => void
+}> = ({ codetype, onCodeTypeChange }) => {
   return <Radio.Group value={codetype} onChange={onCodeTypeChange} buttonStyle="solid">
     <Radio.Button value={CodeType.XmlResource}>Xml Resource</Radio.Button>
     <Radio.Button value={CodeType.Compose}>Compose</Radio.Button>
   </Radio.Group>
 };
 
-const CodePreview: React.FC<{ code: string }> = ({ code }) => (
-  <div style={{ width: '100%' }}>
+const CodePreview: React.FC<{ codetype: CodeType, code: string }> = ({ codetype, code }) => {
+  const getLang = useCallback(() => {
+    switch(codetype) {
+      case CodeType.XmlResource:
+        return "xml"
+      case CodeType.Compose:
+        return "kotlin"
+    }
+  }, [codetype])
+
+  return <div style={{ width: '100%' }}>
     <SyntaxHighlighter
-      language="xml"
+      language={getLang()}
       customStyle={{
         fontSize: 12,
         borderRadius: 8,
@@ -59,8 +67,7 @@ const CodePreview: React.FC<{ code: string }> = ({ code }) => (
       {code}
     </SyntaxHighlighter>
   </div>
-
-);
+};
 
 const CopyToClipBoard: React.FC<{ code: string }> = ({ code }) => (
   <Button
