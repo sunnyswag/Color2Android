@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useState } from 'react';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { Flex, Radio, Button, RadioChangeEvent } from 'antd';
+import { Flex, Radio, Button, RadioChangeEvent, message } from 'antd';
 import { CodeType, UIEventMsgType } from 'model';
 import { SendMsgToModelContext } from './PluginUI';
 import { defaultPluginEvent } from 'model/src/defaultConfig';
@@ -70,17 +70,23 @@ const CodePreview: React.FC<{ codetype: CodeType, code: string }> = ({ codetype,
 };
 
 const CopyToClipBoard: React.FC<{ code: string }> = ({ code }) => {
+  const [messageApi, contextHolder] = message.useMessage();
+
   const sendMsgToModel = useContext(SendMsgToModelContext);
   const onCopyCode = useCallback(() => {
     copy(code);
+    messageApi.success("Copy To Clipboard Success!", 1.5)
     sendMsgToModel({
       ...defaultPluginEvent,
       msgType: UIEventMsgType.CopyToClipboard
     })
   }, [code])
 
-  return <Button
-    type="primary"
-    onClick={onCopyCode}
-  >Copy To Clipboard</Button>
+  return <>
+    {contextHolder}
+    <Button
+      type="primary"
+      onClick={onCopyCode}
+    >Copy To Clipboard</Button>
+  </>
 };
