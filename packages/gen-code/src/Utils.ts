@@ -13,7 +13,7 @@ export function findTextNodes(rootNode: ReadonlyArray<SceneNode>) {
         const alpha = node.fills[0]?.opacity ?? 1;
         const textColor = node.fills[0]?.color;  // 假设文本的填充是单色的，我们获取第一个填充颜色
         result.push({
-            content: node.characters.replace(/\//g, "").trim(),
+            content: node.characters.replace(/[\/ ]+/g, "").trim(),
             color: rgbaToHex(textColor.r, textColor.g, textColor.b, alpha)
         });
       }
