@@ -46,7 +46,7 @@ const ColorCodeTypeView: React.FC<{
 
 const CodePreview: React.FC<{ codetype: CodeType, code: string }> = ({ codetype, code }) => {
   const getLang = useCallback(() => {
-    switch(codetype) {
+    switch (codetype) {
       case CodeType.XmlResource:
         return "xml"
       case CodeType.Compose:
@@ -69,9 +69,18 @@ const CodePreview: React.FC<{ codetype: CodeType, code: string }> = ({ codetype,
   </div>
 };
 
-const CopyToClipBoard: React.FC<{ code: string }> = ({ code }) => (
-  <Button
+const CopyToClipBoard: React.FC<{ code: string }> = ({ code }) => {
+  const sendMsgToModel = useContext(SendMsgToModelContext);
+  const onCopyCode = useCallback(() => {
+    copy(code);
+    sendMsgToModel({
+      ...defaultPluginEvent,
+      msgType: UIEventMsgType.CopyToClipboard
+    })
+  }, [code])
+
+  return <Button
     type="primary"
-    onClick={() => { copy(code) }}
+    onClick={onCopyCode}
   >Copy To Clipboard</Button>
-);
+};
