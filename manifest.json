@@ -6,6 +6,7 @@
   "ui": "app/plugin/dist/index.html",
   "capabilities": [],
   "enableProposedApi": false,
+  "documentAccess": "dynamic-page",
   "editorType": [
     "figma"
   ],
